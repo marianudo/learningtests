@@ -1,12 +1,12 @@
-package me.marianonavas.learningtests.packagetests;
+package me.marianonavas.learningtests.guice.packagetests;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import me.marianonavas.learningtests.packagetests.classes.IThing;
-import me.marianonavas.learningtests.packagetests.classes.ThingImpl;
+import me.marianonavas.learningtests.guice.packagetests.classes.IThing;
+import me.marianonavas.learningtests.guice.packagetests.classes.ThingImpl;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;

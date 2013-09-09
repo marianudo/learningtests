@@ -1,4 +1,4 @@
-package me.marianonavas.learningtests;
+package me.marianonavas.learningtests.guice;
 
 import static org.junit.Assert.assertEquals;
 
