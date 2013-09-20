@@ -2,20 +2,31 @@ package me.marianonavas.learningtests.jackson;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.Date;
 
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
 public class JacksonLearningTests {
+    private final ObjectMapper mapper = new ObjectMapper();
 
     @Test
     public void testObjectToJSON() throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
         Bean bean = instanceRegularBean();
         String valueAsString = mapper.writeValueAsString(bean);
         boolean assertCondition = valueAsString.startsWith("{") &&  valueAsString.endsWith("}");
         assertTrue(assertCondition);
+    }
+
+    @Test
+    public void testJSONToObject() throws JsonParseException, JsonMappingException, IOException {
+        String jsonStr = "{\"string\": \"Hi!\", \"bool\": true}";
+        Bean bean = mapper.readValue(jsonStr.getBytes(), Bean.class);
+        assertEquals("Hi!", bean.getString());
+        assertEquals(true, bean.isBool());
     }
 
     private Bean instanceRegularBean() {
