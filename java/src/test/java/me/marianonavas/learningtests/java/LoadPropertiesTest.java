@@ -18,4 +18,16 @@ public class LoadPropertiesTest {
         assertEquals("1", actual);
         resourceAsStream.close();
     }
+
+    @Test
+    public void testStaticLoadPropertiesFromClassPath() throws Exception {
+        try {
+            InputStream resourceAsStream = LoadPropertiesTest.class.getResourceAsStream("/ogt.properties");
+            Properties props = new Properties();
+            props.load(resourceAsStream);
+            fail("Should have thrown NullPointerException");
+        } catch (NullPointerException ex) {
+            assertNotNull(ex);
+        }
+    }
 }
