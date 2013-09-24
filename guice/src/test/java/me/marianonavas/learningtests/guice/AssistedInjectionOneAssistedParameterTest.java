@@ -13,7 +13,7 @@ import com.google.inject.Injector;
 import com.google.inject.assistedinject.Assisted;
 import com.google.inject.assistedinject.FactoryModuleBuilder;
 
-public class AssistedInjectionTest {
+public class AssistedInjectionOneAssistedParameterTest {
 	private static final Integer INTEGER_VALUE = 100;
 	
 	private static final String EXPECTED_STRING = "Hello World!!";
