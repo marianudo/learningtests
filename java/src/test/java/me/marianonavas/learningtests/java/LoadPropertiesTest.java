@@ -1,6 +1,8 @@
 package me.marianonavas.learningtests.java;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -29,5 +31,14 @@ public class LoadPropertiesTest {
         } catch (NullPointerException ex) {
             assertNotNull(ex);
         }
+    }
+
+    @Test
+    public void testPropertiesInSamePackageLoad() throws Exception {
+        InputStream resourceAsStream = getClass().getResourceAsStream("propsInPackage.properties");
+        Properties props = new Properties();
+        props.load(resourceAsStream);
+        assertNotNull(props);
+        assertEquals("prop1value", props.getProperty("Prop1"));
     }
 }
