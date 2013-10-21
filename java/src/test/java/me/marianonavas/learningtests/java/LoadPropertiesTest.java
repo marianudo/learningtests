@@ -41,4 +41,10 @@ public class LoadPropertiesTest {
         assertNotNull(props);
         assertEquals("prop1value", props.getProperty("Prop1"));
     }
+
+    @Test
+    public void testNoPropertiesInSamePackage() throws Exception {
+        InputStream resourceAsStream = getClass().getResourceAsStream("firstLevelId.json");
+        assertNotNull(resourceAsStream);
+    }
 }
