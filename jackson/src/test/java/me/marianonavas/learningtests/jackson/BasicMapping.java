@@ -10,7 +10,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 
-public class JacksonLearningTests {
+public class BasicMapping {
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Test
